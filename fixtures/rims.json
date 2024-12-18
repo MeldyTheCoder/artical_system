@@ -1,0 +1,170 @@
+[
+  {
+    "model": "blog.rims",
+    "pk": 1,
+    "fields": {
+      "firm": "Konig",
+      "model": "Hypergram",
+      "razboltovka": "4x100",
+      "radius": 16,
+      "color": "Красный",
+      "price": "122564.00",
+      "image": "rims/hypergram.png",
+      "category": 4
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 2,
+    "fields": {
+      "firm": "Rais Volk Racing",
+      "model": "TE37",
+      "razboltovka": "4x100",
+      "radius": 15,
+      "color": "Темно-синий",
+      "price": "13439.00",
+      "image": "rims/TE37.png",
+      "category": 2
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 3,
+    "fields": {
+      "firm": "Enkei Allroad",
+      "model": "EPT1",
+      "razboltovka": "6x139",
+      "radius": 16,
+      "color": "Черный",
+      "price": "186965.00",
+      "image": "rims/ENKEI-RPT1.png",
+      "category": 2
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 4,
+    "fields": {
+      "firm": "Rotiform",
+      "model": "KPS",
+      "razboltovka": "4x100",
+      "radius": 12,
+      "color": "Черный",
+      "price": "96789.00",
+      "image": "rims/rotiform.png",
+      "category": 4
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 5,
+    "fields": {
+      "firm": "Black Rhino",
+      "model": "1785BKR",
+      "razboltovka": "4x100",
+      "radius": 16,
+      "color": "Черный",
+      "price": "50000.00",
+      "image": "rims/black_rhino_1785bkr.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 6,
+    "fields": {
+      "firm": "Black Rhino",
+      "model": "Alston broo5",
+      "razboltovka": "4x100",
+      "radius": 18,
+      "color": "Черный",
+      "price": "65000.00",
+      "image": "rims/black_rhino_alston_broo5.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 7,
+    "fields": {
+      "firm": "Ronal",
+      "model": "lsx w7",
+      "razboltovka": "6x139",
+      "radius": 16,
+      "color": "Черный",
+      "price": "45470.00",
+      "image": "rims/ronal_lsx_w7_r16.jpg",
+      "category": 3
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 8,
+    "fields": {
+      "firm": "Ronal",
+      "model": "r68",
+      "razboltovka": "4x100",
+      "radius": 16,
+      "color": "Черный",
+      "price": "58900.00",
+      "image": "rims/ronal_r68.jpg",
+      "category": 4
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 9,
+    "fields": {
+      "firm": "BBS",
+      "model": "bgt6",
+      "razboltovka": "4x100",
+      "radius": 14,
+      "color": "Черный",
+      "price": "78999.00",
+      "image": "rims/bbs.jpg",
+      "category": 4
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 10,
+    "fields": {
+      "firm": "Vossen",
+      "model": "Vfs-2",
+      "razboltovka": "4x100",
+      "radius": 15,
+      "color": "Черный",
+      "price": "80000.00",
+      "image": "rims/vfs2.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 11,
+    "fields": {
+      "firm": "Vossen",
+      "model": "evo-5r",
+      "razboltovka": "6x139",
+      "radius": 18,
+      "color": "Черный",
+      "price": "65000.00",
+      "image": "rims/vossen_evo-5r.png",
+      "category": 2
+    }
+  },
+  {
+    "model": "blog.rims",
+    "pk": 12,
+    "fields": {
+      "firm": "Vossen",
+      "model": "Cv3-r",
+      "razboltovka": "4x100",
+      "radius": 15,
+      "color": "Черный",
+      "price": "70000.00",
+      "image": "rims/vossen_cv3-r.jpg",
+      "category": 1
+    }
+  }
+]

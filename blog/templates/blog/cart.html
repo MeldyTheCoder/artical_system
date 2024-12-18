@@ -1,0 +1,80 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+        <div class="row align-items-center justify-content-between">
+            <div class="col-sm-2">
+                <div class="card" style="margin-top: 30px; width: 200px;"> 
+                    <h3 class="text-dark" style="padding-left: 40px;">Корзина</h3>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <a href="{% url 'order_items' %}" class="btn btn-primary">Заказать всё</a>
+            </div>
+        </div>
+
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+    <div class="card-deck">
+        {% for cart in rims_cart %}
+        <div class="card" style="width: 450px;">
+            <div class="img">
+                    <img src="{{ cart.rims.image.url }}" width="200px" height="200px">
+                </div>
+            <div class="card-body">
+                <h3>Название: {{ cart.rims.firm }}</h3>
+
+                <input type="number" class="form-control" value="{{ cart.quantity }}"
+                  min="0" style="width:80px;" onchange="window.location.href = `/cart/update-quantity/{{ cart.id }}/${this.value}/`">
+                
+                  <a class="btn btn-dark" style="margin-left: 150px;" href="{% url 'order_item' cart_id=cart.id %}">
+                    Купить
+                </a>
+
+                <a href="{% url 'cart-delete' cart_id=cart.id %}">
+                    <button class="btn btn-danger">Удалить из корзины</button>
+                </a>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!--spares -->
+    <div class="card-deck">
+        {% for cart in spares_cart %}
+        <div class="card" style="width: 450px;">
+            <div class="img">
+                    <img src="{{ cart.spares.image.url }}" width="200px" height="200px">
+                </div>
+            <div class="card-body">
+                <h3>Название: {{ cart.spares.title }}</h3>
+
+                <input type="number" class="form-control" value="{{ cart.quantity }}"
+                  min="0" style="width:80px;" onchange="window.location.href = `/cart/update-quantity/{{ cart.id }}/${this.value}/`">
+                <a class="btn btn-dark" style="margin-left: 150px;" href="{% url 'order_item' cart_id=cart.id %}">
+                    Купить
+                </a>
+
+                <a href="{% url 'cart-delete' cart_id=cart.id %}">
+                    <button class="btn btn-danger">Удалить из корзины</button>
+                </a>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

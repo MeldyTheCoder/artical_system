@@ -1,0 +1,134 @@
+[
+  {
+    "model": "blog.spares",
+    "pk": 1,
+    "fields": {
+      "title": "барабан тормозной",
+      "manufactor": "STANDART",
+      "price": "2334.00",
+      "quantity": 16,
+      "image": "spares/барабан_тормозной.jpg",
+      "category": 9
+    }
+  },
+  {
+    "model": "blog.spares",
+    "pk": 2,
+    "fields": {
+      "title": "Барабан тормозной",
+      "manufactor": "AMD",
+      "price": "3093.00",
+      "quantity": 21,
+      "image": "spares/amd.jpg",
+      "category": 9
+    }
+  },
+  {
+    "model": "blog.spares",
+    "pk": 3,
+    "fields": {
+      "title": "Барабан тормозной",
+      "manufactor": "Fenox",
+      "price": "3500.00",
+      "quantity": 22,
+      "image": "spares/fenox.jpg",
+      "category": 9
+    }
+  },
+  {
+    "model": "blog.spares",
+    "pk": 4,
+    "fields": {
+      "title": "Болт KIA",
+      "manufactor": "CITROEN",
+      "price": "35.00",
+      "quantity": 29,
+      "image": "spares/kia.jpg",
+      "category": 8
+    }
+  },
+  {
+    "model": "blog.spares",
+    "pk": 5,
+    "fields": {
+      "title": "Болт для Toyota rav4",
+      "manufactor": "Kraft",
+      "price": "100.00",
+      "quantity": 30,
+      "image": "spares/kraft.jpeg",
+      "category": 8
+    }
+  },
+  {
+    "model": "blog.spares",
+    "pk": 6,
+    "fields": {
+      "title": "Колпачки на колесные болты",
+      "manufactor": "STANDART",
+      "price": "2000.00",
+      "quantity": 38,
+      "image": "spares/colp.jpg",
+      "category": 8
+    }
+  },
+  {
+    "model": "blog.spares",
+    "pk": 7,
+    "fields": {
+      "title": "ГРМ УАЗ",
+      "manufactor": "STANDART",
+      "price": "2000.00",
+      "quantity": 30,
+      "image": "spares/grm1.jpg",
+      "category": 7
+    }
+  },
+  {
+    "model": "blog.spares",
+    "pk": 8,
+    "fields": {
+      "title": "ГРМ УАЗ 409",
+      "manufactor": "STANDART",
+      "price": "2674.00",
+      "quantity": 33,
+      "image": "spares/пкь2.jpg",
+      "category": 7
+    }
+  },
+  {
+    "model": "blog.spares",
+    "pk": 9,
+    "fields": {
+      "title": "Двигатель 2r-fe",
+      "manufactor": "Toyota",
+      "price": "95000.00",
+      "quantity": 31,
+      "image": "spares/2r-fe.jpg",
+      "category": 5
+    }
+  },
+  {
+    "model": "blog.spares",
+    "pk": 10,
+    "fields": {
+      "title": "Двигатель OM601",
+      "manufactor": "Mercedes-Benz",
+      "price": "150000.00",
+      "quantity": 30,
+      "image": "spares/om601.jpg",
+      "category": 5
+    }
+  },
+  {
+    "model": "blog.spares",
+    "pk": 11,
+    "fields": {
+      "title": "Двигатель 4G63",
+      "manufactor": "Mitsubishi",
+      "price": "195000.00",
+      "quantity": 37,
+      "image": "spares/4g63.jpg",
+      "category": 5
+    }
+  }
+]

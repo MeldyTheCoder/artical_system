@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Главная страница</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/card.css' %}">
+{% endblock %}
+
+{% block content %}
+ <div class="card" style="margin-top: 50px; margin-left: 850px; width: 200px;">
+            <h3 class="text-dark" style="padding-left: 55px;">Диски</h3>
+        </div>
+
+    <div class="card" style="margin-top: -40px; margin-left: 290px; width: 200px;">
+        <h3 class="text-dark" style="padding-left: 40px;">Запчасти</h3>
+    </div>
+
+<a href="{% url 'spares' %}">
+    <div class="card card-hover" style="height: 300px; width: 300px; margin-left: 240px; margin-top: 20px">
+    <div class="card-body">
+        <img src="{% static 'img/spare.jpeg' %}" class="card-img-top">
+    </div>
+</div>
+</a>
+
+<a href="{% url 'rims' %}">
+    <div class="card card-hover" style="height: 300px; width: 300px; margin-left: 800px; margin-top: -300px;">
+        <div class="card-body">
+             <img src="{% static 'img/wheels.jpg' %}" class="card-img-top">
+        </div>
+    </div>
+</a>
+{% endblock %}

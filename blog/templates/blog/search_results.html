@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Результаты поиска</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="card-deck">
+{% for article in articles %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <div class="user-con">
+      <h3 class="card-title">{{ article.user }}</h3>
+    </div>
+    <h5 class="card-title">{{ article.title }}</h5>
+    <p class="card-text">{{ article.content }}</p>
+    <div class="icon-container">
+        <a href="{% url 'delete' article.pk %}">
+          <i class="fa-solid fa-trash"></i>
+        </a>
+    </div>
+  </div>
+</div>
+{% empty %}
+    <p>Ничего не найдено</p>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}
+    <title>Профиль</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="profile-container">
+         <div class="text-center">
+            <img src="{% if user.image %}
+                        {{ user.image.url }}
+                    {% else %}
+                        {% static 'img/default_avatar.jpg' %}
+                    {% endif %}"
+                        class="rounded" alt="...">
+             </div>
+
+        <form method="post" action="{% url 'profile_pg' pk=request.user.pk %}" enctype="multipart/form-data">
+            {% csrf_token %}
+        <label class="small mb-1">Фото профиля</label>
+        {{ form.image }}
+        <label class="small mb-1">Имя пользователя</label>
+        {{ form.username }}
+         <label class="small mb-1">Email</label>
+        {{ form.email }}
+                <button type="submit" class="btn btn-outline-light">Сохранить</button>
+        </form>
+        <a href="{% url 'pass_change' %}">
+            Сменить пароль?
+        </a>
+        </div>
+
+{% endblock %}

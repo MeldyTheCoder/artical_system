@@ -1,0 +1,129 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/order.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="order"> 
+            <h1>Оформление заказа</h1>
+            
+            <br />
+
+            <div class="row">
+                {% for item in rims %}
+                    <div class="col-sm-2">
+                        <div class="order-item">
+                            <img src="{{ item.rims.image.url }}" />
+                            <h4>{{ item.rims.firm }} {{ item.rims.model }}</h4>
+                            <span>{{ item.rims.price }} RUB. <code>x {{ item.quantity }} шт.</code></span>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                {% for item in spares %}
+                    <div class="col-sm-2">
+                        <div class="order-item">
+                            <img src="{{ item.spares.image.url }}" />
+                            <h4>{{ item.spares.title }}</h4>
+                            <span>{{ item.spares.price }} RUB. <code>x {{ item.quantity }} шт.</code></span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <hr />
+
+            {% for message in messages %}
+                <div class="alert alert-danger">
+                    <strong>Ошибка:</strong> {{ message|safe }}
+                </div>
+            {% empty %}
+                <div class="alert alert-info">
+                    <strong>Внимание:</strong> Перед отправкой заказа, пожалуйста, заполните данные адресата.
+                </div>
+            {% endfor %}
+
+            <form action="{% if cart_id %}{% url 'order_item' cart_id=cart_id %}{% else%}{% url 'order_items' %}{% endif %}" method="post">
+                {% csrf_token %}
+                <div class="row order-form">
+                    <div class="col-sm-6 col-divider">
+                        <h4>Контактные данные:</h4>
+                        <div class="row align-items-start">
+                            <div class="form-group col-sm-4 col-pad">
+                                <label for="lastName">Фамилия:</label>
+                                <input class="form-control" placeholder="Иванов" id="lastName" name="last_name" />
+                                <span>{{ form.last_name.errors.as_text }}</span>
+                                
+                            </div>
+                            <div class="form-group col-sm-4 col-pad">
+                                <label for="firstName">Имя:</label>
+                                <input class="form-control" placeholder="Иван" id="firstName" name="first_name" />
+                                <span>{{ form.first_name.errors.as_text }}</span>
+                                
+                            </div>
+                            <div class="form-group col-sm-4 col-pad">
+                                <label for="surname">Отчество:</label>
+                                <input class="form-control" placeholder="Иванович" id="surname" name="surname" />
+                                <span>{{ form.surname.errors.as_text }}</span>
+                            </div>
+                            <div class="form-group col-sm-6 col-pad">
+                                <label for="phone">Номер телефона:</label>
+                                <input
+                                    class="form-control"
+                                    placeholder="+7 (999) 999-99-99"
+                                    id="phone"
+                                    name="phone"
+                                />
+                                <span>{{ form.phone.errors.as_text }}</span>
+                            </div>
+
+                            <div class="form-group col-sm-6 col-pad">
+                                <label for="email">E-mail:</label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="ivan@mail.ru"
+                                    id="email"
+                                    name="email"
+                                />
+                                <span>{{ form.email.errors.as_text }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <h4>Доставка:</h4>
+                        <div class="row">
+                            <div class="form-group col-sm-6 col-pad">
+                                <label for="city">Город:</label>
+                                <input class="form-control" placeholder="Тверь" id="city" name="city" />
+                                <span>{{ form.city.errors.as_text }}</span>
+                            </div>
+                            <div class="form-group col-sm-6 col-pad">
+                                <label for="address">Адрес:</label>
+                                <input class="form-control" placeholder="ул. Тверская, д. 4, кв. 13" id="address" name="address" />
+                                <span>{{ form.address.errors.as_text }}</span>
+                            </div>
+                            <div class="col-sm-6 col-pad">
+                                <label for="index">Почтовый индекс:</label>
+                                <input type="number" class="form-control" placeholder="170000" id="index" name="index" />
+                                <span>{{ form.index.errors.as_text }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <button class="btn btn-primary" type="submit">Оформить заказ</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

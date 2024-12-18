@@ -1,0 +1,17 @@
+.profile-container{
+    width: 300px;
+    margin-left: 500px;
+    margin-top: 50px;
+}
+
+.profile-container img{
+    margin-bottom: 30px;
+    width: 200px;
+    height: auto;
+
+}
+
+.profile-container button{
+    margin-top: 30px;
+    margin-left: 100px;
+}
